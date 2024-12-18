@@ -119,7 +119,8 @@ class Litning_AI_TEXT_CLASSIFICAITON_Model(LightningModule):
             input_ids=input_ids,
             attention_mask=attention_mask
         )['pooler_output']
-        output = self.drop(pooler_output)
+        # droput makes the performace worse, should not be here
+        # output = self.drop(pooler_output)
         output = self.outputLayer(pooler_output)
         return self.sigmoid(output).flatten()
 
@@ -166,8 +167,8 @@ class Litning_AI_TEXT_CLASSIFICAITON_Model(LightningModule):
         self.log("test_Recall", Recall, prog_bar=True, logger=True)
 
     def configure_optimizers(self):
-        # optimizer = torch.optim.AdamW(params=self.parameters(), lr=2e-5)
-        optimizer = transformers.AdamW(params=self.parameters(), lr=2e-5, correct_bias=False)
+        optimizer = torch.optim.AdamW(params=self.parameters(), lr=2e-5)
+        # optimizer = transformers.AdamW(params=self.parameters(), lr=2e-5, correct_bias=False)
         return optimizer
 
 
