@@ -1,0 +1,33 @@
+{
+  "AWSEBDockerrunVersion": 2,
+
+  "containerDefinitions": [
+
+    {
+      "name": "firstproject",
+      "image": "gabrielagapie/ai_text_detector_plublic_dataset-ai_text_detector:latest",
+      "essential": true,
+      "memory": 2048,
+      "portMappings": [
+        {
+          "hostPort": 8080,
+          "containerPort": 8080
+        }
+      ]
+    },
+
+
+    {
+      "name": "firstproject-react",
+      "image": "gabrielagapie/ai_text_detector_plublic_dataset-front-end:latest",
+      "essential": true,
+      "memory": 256,
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 5173
+        }
+      ]
+    }
+  ]
+}
