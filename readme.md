@@ -1,5 +1,7 @@
 # Create an AI text detector using a LLM 
 
+[try it out here!](http://aitextdetector4-env.eba-fjz7gg3c.eu-north-1.elasticbeanstalk.com/)
+
 The purpose is to create a model that can detect Ai written text with great accuracy 
 
 ### Dataset Aquisition
@@ -65,5 +67,6 @@ Training is done for 10 epochs
 | test_Recall      | 	 0.9851906895637512 | 
 | test_accuracy      | 	0.9785264730453491  | 
 | test_loss      | 	0.07475403696298599  | 
+
 
 
